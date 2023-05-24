@@ -1,0 +1,15 @@
+kind: APIcast
+apiVersion: apps.3scale.net/v1alpha1
+metadata:
+  name: production
+spec:
+  logLevel: warn
+  httpsPort: 8043
+  extendedMetrics: true
+  cacheConfigurationSeconds: 300
+  deploymentEnvironment: production
+  adminPortalCredentialsRef:
+    name: 3scaleportal
+  replicas: 1
+  configurationLoadMode: boot
+

@@ -1,0 +1,14 @@
+kind: APIcast
+apiVersion: apps.3scale.net/v1alpha1
+metadata:
+  name: staging
+spec:
+  logLevel: debug
+  httpsPort: 8043
+  extendedMetrics: true
+  cacheConfigurationSeconds: 0
+  deploymentEnvironment: staging
+  adminPortalCredentialsRef:
+    name: 3scaleportal
+  replicas: 1
+  configurationLoadMode: lazy
