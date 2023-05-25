@@ -1,0 +1,25 @@
+= References
+
+```shell
+RHSSO_NS=rhsso
+RHSSO_THRESCALE_REALM=3scale
+RHSSO_THRESCALE_CLIENT_ID=oidc-issuer-for-3scale
+RHSSO_THRESCALE_CLIENT_SECRET=ze9qOSW1z1pCmI5KYAKcs5Tw6oDXtXjz
+
+RHSSO_URL=$(oc -n $RHSSO_NS get route/keycloak -o=jsonpath='{.spec.host}')
+
+
+
+
+echo "https://${RHSSO_THRESCALE_CLIENT_ID}:${RHSSO_THRESCALE_CLIENT_SECRET}@${RHSSO_URL}/auth/realms/${RHSSO_THRESCALE_REALM}"
+https://oidc-issuer-for-3scale:ze9qOSW1z1pCmI5KYAKcs5Tw6oDXtXjz@keycloak-rhsso.apps-crc.testing/auth/realms/3scale
+
+```
+
+
+. https://www.youtube.com/watch?v=I7u_ienPZbs[Video: API Security with OpenID Connect and Red Hat 3scale API Management]
+. https://access.redhat.com/solutions/3621611[ How to configure the zync pod from Red Hat 3scale API Management to accept a custom self-signed certificate from Red Hat Single Sign-On (RH SSO)?]
+. https://access.redhat.com/documentation/en-us/red_hat_3scale_api_management/2.13/html/administering_the_api_gateway/integrating-threescale-with-an-openid-connect-identity-provider[Integrating 3scale with an OpenID Connect identity provider]
+. https://developers.redhat.com/blog/2018/03/09/3scale-activedocs-oauth-2-0[3scale ActiveDocs and OAuth 2.0]
+. https://github.com/tnscorcoran/rhsso-3scale/blob/master/README.md
+. https://developers.redhat.com/blog/2017/11/21/setup-3scale-openid-connect-oidc-integration-rh-sso[HOW-TO setup 3scale OpenID Connect (OIDC) Integration with RH SSO]
